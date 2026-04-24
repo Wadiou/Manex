@@ -1,0 +1,46 @@
+{
+	"name": "manex",
+	"shortName": "Manex",
+	"description": "See every extension you have installed. Save a simple file you can open in your browser anytime, and use the dashboard for more tools.",
+	"private": true,
+	"version": "0.2.0",
+	"license": "GPL-3.0",
+	"type": "module",
+	"scripts": {
+		"icons": "bun scripts/generate-extension-icons.ts",
+		"dev": "bun run icons && wxt",
+		"dev:firefox": "bun run icons && wxt -b firefox",
+		"build": "bun run icons && wxt build",
+		"build:firefox": "bun run icons && wxt build -b firefox",
+		"zip": "bun run icons && wxt zip",
+		"zip:firefox": "bun run icons && wxt zip -b firefox",
+		"compile": "tsc --noEmit",
+		"postinstall": "wxt prepare",
+		"ui:add": "bunx shadcn@latest add"
+	},
+	"dependencies": {
+		"@base-ui/react": "^1.4.1",
+		"@fontsource-variable/geist": "^5.2.8",
+		"@fontsource-variable/geist-mono": "^5.2.7",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"lucide-react": "^1.9.0",
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4",
+		"shadcn": "^4.4.0",
+		"tailwind-merge": "^3.5.0",
+		"tw-animate-css": "^1.4.0"
+	},
+	"devDependencies": {
+		"@resvg/resvg-js": "^2.6.2",
+		"@tailwindcss/vite": "^4.2.4",
+		"@types/chrome": "^0.1.40",
+		"@types/node": "^25.6.0",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"@wxt-dev/module-react": "^1.1.5",
+		"tailwindcss": "^4.2.4",
+		"typescript": "^5.9.3",
+		"wxt": "^0.20.25"
+	}
+}
